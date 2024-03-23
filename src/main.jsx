@@ -7,15 +7,32 @@ import {
 import './index.css'
 import Root from './components/Root/Root';
 import Home from './components/Home/Home';
+import AppliedJobs from './components/AppliedJobs/AppliedJobs';
+import Blogs from './components/Blogs/Blogs';
+import Jobs from './components/Jobs/Jobs';
+import ErrorPages from './components/ErrorPages/ErrorPages';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root/>,
+    element: <Root />,
+    errorElement: <ErrorPages/>,
     children: [
       {
         path: "/",
         element: <Home/>
+      },
+      {
+        path: "/applied",
+        element:<AppliedJobs/>
+      },
+      {
+        path: "/blogs",
+        element:<Blogs/>
+      },
+      {
+        path: "/jobs",
+        element:<Jobs/>
       }
     ]
   },
